@@ -1,0 +1,59 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f48fb1;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+main {
+  padding: 2rem;
+}
+
+.productos {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.producto {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+}
+
+button {
+  background-color: #f06292;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+#carrito {
+  margin-top: 3rem;
+}
+
+#lista-carrito {
+  list-style: none;
+  padding: 0;
+}
+
+footer {
+  background-color: #f06292;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}

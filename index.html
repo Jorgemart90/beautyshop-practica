@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeautyShop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>BeautyShop</h1>
+      <nav>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#carrito">Carrito (<span id="cart-count">0</span>)</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="catalogo">
+        <h2>Productos de Belleza</h2>
+        <div class="productos">
+          <div class="producto" data-nombre="Labial Rosa" data-precio="150">
+            <img src="https://via.placeholder.com/150" alt="Labial Rosa" />
+            <h3>Labial Rosa</h3>
+            <p>$150 MXN</p>
+            <button class="agregar-carrito">Agregar</button>
+          </div>
+          <div
+            class="producto"
+            data-nombre="Paleta de Sombras"
+            data-precio="320"
+          >
+            <img src="https://via.placeholder.com/150" alt="Sombras" />
+            <h3>Paleta de Sombras</h3>
+            <p>$320 MXN</p>
+            <button class="agregar-carrito">Agregar</button>
+          </div>
+          <div
+            class="producto"
+            data-nombre="Rímel Waterproof"
+            data-precio="210"
+          >
+            <img src="https://via.placeholder.com/150" alt="Rímel" />
+            <h3>Rímel Waterproof</h3>
+            <p>$210 MXN</p>
+            <button class="agregar-carrito">Agregar</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="carrito">
+        <h2>Tu Carrito</h2>
+        <ul id="lista-carrito"></ul>
+        <p>
+          Total: <strong>$<span id="total">0</span> MXN</strong>
+        </p>
+        <button id="comprar">Simular Compra</button>
+        <p id="mensaje-compra"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 BeautyShop</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
