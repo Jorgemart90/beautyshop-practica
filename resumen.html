@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumen de Compra</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🧾 Resumen de tu Compra</h1>
+    </header>
+
+    <section id="resumen-compra">
+      <ul id="resumen-lista"></ul>
+      <p>Total: <span id="resumen-total"></span></p>
+
+      <form id="form-compra">
+        <h3>Datos para la entrega</h3>
+        <input
+          type="text"
+          id="nombre"
+          placeholder="Nombre completo"
+          required
+        /><br />
+        <input type="tel" id="telefono" placeholder="Teléfono" required /><br />
+        <input
+          type="text"
+          id="direccion"
+          placeholder="Dirección"
+          required
+        /><br /><br />
+        <button type="submit">Confirmar Compra</button><br />
+      </form>
+      <br />
+      <button id="btn-regresar">Regresar a productos</button>
+
+      <p
+        id="mensaje-confirmacion"
+        style="display: none; color: green; font-weight: bold; margin-top: 1rem"
+      ></p>
+    </section>
+
+    <script>
+      const productos = JSON.parse(localStorage.getItem("carrito") || "[]");
+      const lista = document.getElementById("resumen-lista");
+      const total = productos.reduce((acc, p) => acc + p.precio, 0);
+      productos.forEach((p) => {
+        const li = document.createElement("li");
+        li.textContent = `${p.nombre} - $${p.precio} COP`;
+        lista.appendChild(li);
+      });
+      document.getElementById("resumen-total").textContent = `$${total} COP`;
+
+      document.getElementById("form-compra").addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.getElementById("mensaje-confirmacion").textContent =
+          "✅ ¡Compra exitosa!";
+        document.getElementById("mensaje-confirmacion").style.display = "block";
+        setTimeout(() => {
+          localStorage.removeItem("carrito");
+          window.location.href = "index.html";
+        }, 500);
+      });
+
+      // Botón regresar
+      document.getElementById("btn-regresar").addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>
